@@ -1,0 +1,2 @@
+scrapy==2.3.0
+scrapyd==1.2.0
