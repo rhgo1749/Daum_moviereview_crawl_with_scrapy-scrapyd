@@ -6,7 +6,7 @@ from bigcrawler.utils import MovieCrawler
 item = CrawledItem()
 utils = MovieCrawler()
 
-class BaseSpider(scrapy.Spider):
+class BasicSpider(scrapy.Spider):
     base_url = "https://movie.daum.net/moviedb/grade?movieId="
     middle_url = "&type=netizen&page="
 
@@ -16,9 +16,6 @@ class BaseSpider(scrapy.Spider):
     endIndex = 10
 
     handle_httpstatus_list = [500]
-
-    def __init__(self):
-        pass
 
     # read data with moving urls
     def start_requests(self):
@@ -60,112 +57,112 @@ class BaseSpider(scrapy.Spider):
                 utils.is_error = True
                 break
 
-class Childspider1(BaseSpider):
+class Childspider1(BasicSpider):
     name = __qualname__
     startIndex = 1
     movingIndex = startIndex
     endIndex = 10000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider2(BaseSpider):
+class Childspider2(BasicSpider):
     name = __qualname__
     startIndex = 10001
     movingIndex = startIndex
     endIndex = 20000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider3(BaseSpider):
+class Childspider3(BasicSpider):
     name = __qualname__
     startIndex = 30001
     movingIndex = startIndex
     endIndex = 40000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider4(BaseSpider):
+class Childspider4(BasicSpider):
     name = __qualname__
     startIndex = 40001
     movingIndex = startIndex
     endIndex = 45000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider5(BaseSpider):
+class Childspider5(BasicSpider):
     name = __qualname__
     startIndex = 50001
     movingIndex = startIndex
     endIndex = 60000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider6(BaseSpider):
+class Childspider6(BasicSpider):
     name = __qualname__
     startIndex = 60001
     movingIndex = startIndex
     endIndex = 70000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider7(BaseSpider):
+class Childspider7(BasicSpider):
     name = __qualname__
     startIndex = 70001
     movingIndex = startIndex
     endIndex = 80000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider8(BaseSpider):
+class Childspider8(BasicSpider):
     name = __qualname__
     startIndex = 80001
     movingIndex = startIndex
     endIndex = 90000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider9(BaseSpider):
+class Childspider9(BasicSpider):
     name = __qualname__
     startIndex = 90001
     movingIndex = startIndex
     endIndex = 100000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider10(BaseSpider):
+class Childspider10(BasicSpider):
     name = __qualname__
     startIndex = 100001
     movingIndex = startIndex
     endIndex = 110000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider11(BaseSpider):
+class Childspider11(BasicSpider):
     name = __qualname__
     startIndex = 110001
     movingIndex = startIndex
     endIndex = 120000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider12(BaseSpider):
+class Childspider12(BasicSpider):
     name = __qualname__
     startIndex = 120001
     movingIndex = startIndex
     endIndex = 130000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider13(BaseSpider):
+class Childspider13(BasicSpider):
     name = __qualname__
     startIndex = 130001
     movingIndex = startIndex
     endIndex = 140000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider14(BaseSpider):
+class Childspider14(BasicSpider):
     name = __qualname__
     startIndex = 140001
     movingIndex = startIndex
     endIndex = 150000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider15(BaseSpider):
+class Childspider15(BasicSpider):
     name = __qualname__
     startIndex = 150001
     movingIndex = startIndex
     endIndex = 160000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
-class Childspider16(BaseSpider):
+class Childspider16(BasicSpider):
     name = __qualname__
     startIndex = 45001
     movingIndex = startIndex
