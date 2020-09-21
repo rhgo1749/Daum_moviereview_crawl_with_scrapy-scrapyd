@@ -1,1 +1,3 @@
 https://youtu.be/PZKH5S0C8EI
+
+scrapyd 명령어 실행은 bigcralwer 폴더 내에서!
