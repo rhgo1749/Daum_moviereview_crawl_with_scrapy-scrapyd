@@ -1,2 +1,4 @@
 scrapy==2.3.0
 scrapyd==1.2.1
+pypiwin32==223
+pywin32==228
