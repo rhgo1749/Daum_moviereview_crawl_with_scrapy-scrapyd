@@ -1,0 +1,15 @@
+# no result csv
+*.csv
+
+# no pycharm project folder
+**/.idea/
+
+# no __pycache__
+**/__pycache__/
+
+# no scrapyd bulids, dbs, eggs, logs, project.egg-info
+**/bulids/
+**/dbs/
+**/eggs/
+**/logs/
+**/project.egg-info/
