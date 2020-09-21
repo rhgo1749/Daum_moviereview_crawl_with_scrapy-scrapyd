@@ -7,7 +7,6 @@ item = CrawledItem()
 utils = MovieCrawler()
 
 class BaseSpider(scrapy.Spider):
-
     base_url = "https://movie.daum.net/moviedb/grade?movieId="
     middle_url = "&type=netizen&page="
 
@@ -33,11 +32,13 @@ class BaseSpider(scrapy.Spider):
             if response.status not in self.handle_httpstatus_list:
                 if len(response.xpath('//*[@id="mArticle"]/div[2]/div[2]/div[1]/p')) == 0:
                     numOfli = len(response.xpath('//*[@id="mArticle"]/div[2]/div[2]/div[1]/ul/li').extract())
-                    for i in range(1, numOfli):
+                    for i in range(1, numOfli+1):
                         reviewText = response.xpath('//*[@id="mArticle"]/div[2]/div[2]/div[1]/ul/li[{0}]/div/p/text()'.format(i))
                         reviewTitle = response.xpath('//*[@id="mArticle"]/div[1]/a/h2/text()')
+                        reviewTime = response.xpath('//*[@id="mArticle"]/div[2]/div[2]/div[1]/ul/li[{0}]/div/div[2]/span[1]/text()'.format(i))
                         item['reviewTitle'] = reviewTitle.extract()
                         item['reviewText'] = reviewText.extract()
+                        item['reviewTime'] = reviewTime.extract()
                         yield item
                     self.currentReviewPage = self.currentReviewPage + 1
                     yield scrapy.Request(self.base_url + "{0}".format(self.movingIndex) + self.middle_url +
@@ -63,110 +64,110 @@ class Childspider1(BaseSpider):
     name = __qualname__
     startIndex = 1
     movingIndex = startIndex
-    endIndex = 10
+    endIndex = 10000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider2(BaseSpider):
     name = __qualname__
-    startIndex = 11
+    startIndex = 10001
     movingIndex = startIndex
-    endIndex = 20
+    endIndex = 20000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider3(BaseSpider):
     name = __qualname__
-    startIndex = 21
+    startIndex = 30001
     movingIndex = startIndex
-    endIndex = 30
+    endIndex = 40000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider4(BaseSpider):
     name = __qualname__
-    startIndex = 31
+    startIndex = 40001
     movingIndex = startIndex
-    endIndex = 40
+    endIndex = 45000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider5(BaseSpider):
     name = __qualname__
-    startIndex = 41
+    startIndex = 50001
     movingIndex = startIndex
-    endIndex = 50
+    endIndex = 60000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider6(BaseSpider):
     name = __qualname__
-    startIndex = 51
+    startIndex = 60001
     movingIndex = startIndex
-    endIndex = 60
+    endIndex = 70000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider7(BaseSpider):
     name = __qualname__
-    startIndex = 61
+    startIndex = 70001
     movingIndex = startIndex
-    endIndex = 70
+    endIndex = 80000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider8(BaseSpider):
     name = __qualname__
-    startIndex = 71
+    startIndex = 80001
     movingIndex = startIndex
-    endIndex = 80
+    endIndex = 90000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider9(BaseSpider):
     name = __qualname__
-    startIndex = 81
+    startIndex = 90001
     movingIndex = startIndex
-    endIndex = 90
+    endIndex = 100000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider10(BaseSpider):
     name = __qualname__
-    startIndex = 91
+    startIndex = 100001
     movingIndex = startIndex
-    endIndex = 100
+    endIndex = 110000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider11(BaseSpider):
     name = __qualname__
-    startIndex = 101
+    startIndex = 110001
     movingIndex = startIndex
-    endIndex = 110
+    endIndex = 120000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider12(BaseSpider):
     name = __qualname__
-    startIndex = 111
+    startIndex = 120001
     movingIndex = startIndex
-    endIndex = 120
+    endIndex = 130000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider13(BaseSpider):
     name = __qualname__
-    startIndex = 121
+    startIndex = 130001
     movingIndex = startIndex
-    endIndex = 130
+    endIndex = 140000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider14(BaseSpider):
     name = __qualname__
-    startIndex = 131
+    startIndex = 140001
     movingIndex = startIndex
-    endIndex = 140
+    endIndex = 150000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider15(BaseSpider):
     name = __qualname__
-    startIndex = 141
+    startIndex = 150001
     movingIndex = startIndex
-    endIndex = 150
+    endIndex = 160000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)
 
 class Childspider16(BaseSpider):
     name = __qualname__
-    startIndex = 151
+    startIndex = 45001
     movingIndex = startIndex
-    endIndex = 160
+    endIndex = 50000
     fileRangeName = "{0}-{1}".format(startIndex, endIndex)

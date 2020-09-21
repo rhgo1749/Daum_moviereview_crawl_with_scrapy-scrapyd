@@ -10,5 +10,6 @@ class CrawledItem(scrapy.Item):
     # define the fields for your item here like:
     reviewTitle = scrapy.Field() # 제목
     reviewText = scrapy.Field() # 리뷰
-    # reviewGrade = scrapy.Field() # 평점
+    reviewDay = scrapy.Field() # 날짜
+    reviewTime = scrapy.Field() # 시간
     pass
